@@ -58,6 +58,10 @@ header a:focus {
   border-top: 1px #0065fc solid;
 }
 
+h1 {
+  font-size: 1.4rem;
+}
+
 .section-title {
   margin: 0;
   font-size: 22px;
@@ -86,9 +90,69 @@ header a:focus {
   color: var(--main-bg-color);
 }
 
+/****** Moteur de recherche *******************/
+.hebergements-and-populaires-title {
+    margin-top: 30px;
+}
+
+.hebergements-and-populaires form {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.search-grey-part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  width: 40px;
+  height: auto;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.hebergements-and-populaires input {
+  border-left: none;
+  border-right: none;
+  border-top: 1px #f2f2f2 solid;
+  border-bottom: 1px #f2f2f2 solid;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.hebergements-and-populaires label {
+  background-color: #0065fc;
+  color: white;
+  padding: 10px 15px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+/****** Filtres ***********/
+.filters-hebergements {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.filters-hebergements a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  border: 1px #d9d9d9 solid;
+  border-radius: 30px;
+  padding: 10px 15px 10px 15px;
+}
+
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
