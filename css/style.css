@@ -53,13 +53,17 @@ header a {
   color: black;
 }
 
-header a:focus {
+header a:active {
   color: #0065fc;
   border-top: 1px #0065fc solid;
 }
 
 h1 {
   font-size: 1.4rem;
+}
+
+a {
+    text-decoration: none;
 }
 
 .section-title {
@@ -107,7 +111,7 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
-  width: 40px;
+  width: 45px;
   height: auto;
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
@@ -124,10 +128,13 @@ h1 {
 
 .hebergements-and-populaires label {
   background-color: #0065fc;
-  color: white;
   padding: 10px 15px;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+}
+
+.hebergements-and-populaires a {
+    color: white;
 }
 
 /****** Filtres ***********/
@@ -291,6 +298,35 @@ h1 {
   padding-left: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+/****** Footer ******************/
+.pied-2-page {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #f2f2f2;
+}
+
+.colonne-pied {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+}
+
+.pied-2-page a {
+    display: block;
+    color: black;
+    font-size: 0.9em;
+}
+
+.pied-2-page h4 {
+    display: block;
+    margin: 0px;
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
