@@ -9,13 +9,69 @@
   --filter-bg-color: #deebff;
 }
 
-.fa-solid {
-  color: var(--main-color);
+h1 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-body {
+h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  height: 79px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header img {
+  width: 61.09px;
+  height: 19px;
+  margin: 30px 0;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 32px;
+  margin-bottom: 47px;
+}
+
+nav a {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 69px;
+  padding-top: 16px;
+}
+
+nav a:hover,
+a:active {
+  color: #0065fc;
+  border-top: 1px #0065fc solid;
 }
 
 .main-container {
@@ -25,116 +81,39 @@ body {
   box-sizing: border-box;
 }
 
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100px;
-}
-
-header img {
-  width: auto;
-  height: 26px;
-}
-
-header nav {
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 70px;
-}
-
-header a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  margin-right: 50px;
-  color: black;
-}
-
-header a:active {
-  color: #0065fc;
-  border-top: 1px #0065fc solid;
-}
-
-h1 {
-  font-size: 1.4rem;
-}
-
-a {
-    text-decoration: none;
-}
-
-.section-title {
-  margin: 0;
-  font-size: 22px;
-}
-
-.card {
-  background-color: white;
-  border-radius: 20px;
-  padding: 5px;
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-}
-
-.card img {
-  object-fit: cover;
-}
-
-.card-title {
-  font-size: 16px;
-}
-
-.euro {
-  font-weight: 700;
-}
-
-.neutralStar {
-  color: var(--main-bg-color);
-}
-
 /****** Moteur de recherche *******************/
-.hebergements-and-populaires-title {
-  margin-top: 30px;
-}
-
-.hebergements-and-populaires form {
-  display: flex;
-  flex-direction: row;
-  margin-top: 30px;
-  font-weight: bold;
-}
 
 .search-grey-part {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
-  width: 45px;
-  height: auto;
-  border-bottom-left-radius: 30px;
-  border-top-left-radius: 30px;
+  width: 50px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .hebergements-and-populaires input {
   border-left: none;
   border-right: none;
+  width: 195px;
   border-top: 1px #f2f2f2 solid;
   border-bottom: 1px #f2f2f2 solid;
-  font-weight: bold;
-  padding-left: 10px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding-left: 30px;
 }
 
-.hebergements-and-populaires label {
+.button-hebergements-search {
+  border: none;
   background-color: #0065fc;
-  padding: 10px 15px;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-
-.hebergements-and-populaires a {
-    color: white;
+  width: 132px;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 14px 16px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 /****** Filtres ***********/
@@ -142,25 +121,77 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-weight: bold;
-  margin-top: 30px;
-  gap: 10px;
+  margin-top: 35px;
+  font-size: 1.0625em;
+  gap: 15px;
 }
 
 .filters-hebergements a {
-  display: block;
-  text-decoration: none;
-  color: black;
+  font-weight: 700;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
   border: 1px #d9d9d9 solid;
   border-radius: 30px;
-  padding: 10px 15px 10px 15px;
+}
+
+.filter:hover {
+  background-color: #deebff;
+}
+
+.filter i {
+  margin-right: 10px;
+}
+
+.nombre-hebergements {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.nombre-hebergements p {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.fa-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.625rem;
+  height: 24px;
+  width: 24px;
+  border: 2px #f2f2f2 solid;
+  border-radius: 12px;
 }
 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.hebergements-and-populaires-title p {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.hebergements-and-populaires form {
+  display: flex;
+  flex-direction: row;
+  margin-top: 35px;
+  height: 49px;
 }
 
 .hebergements-and-populaires section {
@@ -172,30 +203,31 @@ a {
 
 /****** Resultats **************/
 .resultats {
+  margin-top: 35px;
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
-  gap: 3%;
+  gap: 40px;
 }
 
+/****** Hebergements **********/
 .hebergements {
   width: 65%;
 }
 
-/****** Hebergements **********/
 .hebergements-cards {
+  margin: 30px 0;
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
 }
 
 .hebergements-cards .card {
   display: flex;
   flex-direction: column;
-  margin-top: 33px;
 }
 
 .hebergements-cards img {
+  width: 100%;
   height: 136px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -205,17 +237,15 @@ a {
   padding-left: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   box-sizing: border-box;
 }
 
 .hebergements-cards .card-title {
-  margin-top: 10px;
-  margin-bottom: 4px;
+  margin: 4px 0 0;
 }
 
 .hebergements-cards .card-subtitle {
-  margin: 0;
+  margin: 8px 0;
 }
 
 .hebergements-cards .card-rating {
@@ -235,7 +265,7 @@ a {
 
 .populaires-cards .card {
   display: flex;
-  margin-top: 33px;
+  margin-top: 30px;
 }
 
 .populaires-cards img {
@@ -271,21 +301,23 @@ a {
 .activites {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 35px;
+  padding: 30px;
 }
 
 .activites-cards {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  justify-content: center;
+  gap: 30px;
 }
 
 .activites-cards .card {
   display: flex;
   flex-direction: column;
-  width: 25%;
-  padding: 0px;
-  margin-top: 33px;
+  width: 22.5%;
+  padding: 0;
+  margin-top: 30px;
 }
 
 .activites-cards img {
@@ -296,43 +328,75 @@ a {
 
 .activites-cards .card-title {
   padding-left: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 20px 0;
 }
+
+/****** Cards ***************/
+.card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.card img {
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.euro {
+  font-weight: 700;
+}
+
+.fa-solid {
+  color: var(--main-color);
+}
+
+.neutralStar {
+  color: var(--main-bg-color);
+}
+/* Je n'ai pas compris ce fonctionnement. J'ai ajouté du style à la balise d'icone <i> pour obtenir des étoiles grisées */
 
 /****** Footer ******************/
 .pied-2-page {
-    width: 100%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    background-color: #f2f2f2;
+  margin-top: 65px;
+  height: 120px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #f2f2f2;
 }
 
 .colonne-pied {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 10px;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pied-2-page h3 {
+  display: block;
 }
 
 .pied-2-page a {
-    display: block;
-    color: black;
-    font-size: 0.9em;
-}
-
-.pied-2-page h4 {
-    display: block;
-    margin: 0px;
+  display: block;
+  margin-top: 15px;
+  font-size: 1rem;
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
+/*
 @media (max-width: 1024px) {
   .hebergements-and-populaires {
     flex-direction: column;
@@ -365,8 +429,10 @@ a {
     font-size: 13px;
   }
 }
+*/
 
 /* Small devices (phones, less than 768px) */
+/*
 @media (max-width: 767.98px) {
-  /* ... */
 }
+*/
