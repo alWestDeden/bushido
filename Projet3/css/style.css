@@ -94,7 +94,7 @@ nav a {
 }
 
 nav a:hover,
-a:active {
+nav a:active {
   color: #0065fc;
   border-top: 1px solid #0065fc;
 }
@@ -499,31 +499,47 @@ p {
     padding: 0;
   }
 
+  header img, header nav {
+    display: block;
+  }
+
   header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 110px;
   }
   /* le header passe en affichege centré || the header is now shown centered */
 
+  header img {
+    margin: 30px 0;
+  }
+
   header nav {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    text-align: center;
     margin: 0;
   }
+  /* rappel de "display: flex" et "flex-direction: row" sinon heritage du header || recall of "display: flex" and "flex-direction: row" otherwise inherit header */
 
   nav a {
     width: 50%;
-    margin: 0 0 15px 0;
-    padding: 0 0 15px 0;
+    text-align: center;
+    margin-left: 0;
+    padding: 0 0 15px;
   }
 
   nav a:hover,
-  a:active {
+  nav a:active {
     color: #0065fc;
     border-top: 0;
     border-bottom: 1px #0065fc solid;
+  }
+
+  .rents-and-populars {
     width: 100%;
+    margin-top: 10px;
   }
 
   .search-part {
@@ -571,10 +587,6 @@ p {
     gap: 15px;
   }
   /* "flex-direction: column-reverse" la section Plus Populaires et affichée avant la section Hébergements || "flex-direction: column-reverse" the Most Populars section is shown before the Rents section*/
-
-  .rents-and-populars {
-    width: 100%;
-  }
 
   .populars {
     width: 100%;
