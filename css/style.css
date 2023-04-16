@@ -12,31 +12,57 @@
 h1 {
   font-size: 1.375rem;
   font-weight: 700;
+  line-height: 26px;
+  color: black;
   margin: 0;
 }
 
 h2 {
-  font-size: 1.125rem;
+  font-size: 1.375rem;
   font-weight: 700;
+  line-height: 26px;
   color: black;
   margin: 0;
 }
 
 h3 {
+  font-size: 1.125rem;
+  line-height: 21px;
+  margin: 0;
+}
+
+h4 {
   font-size: 1rem;
-  font-weight: 700;
-  color: black;
+  line-height: 19px;
   margin: 0;
 }
 
 p {
   font-size: 1rem;
   font-weight: 400;
+  line-height: 19px;
+  margin: 0;
 }
 
 a {
-  text-decoration: none;
+  font-size: 1rem;
+  line-height: 19px;
   color: black;
+  text-decoration: none;
+  margin: 0;
+}
+
+b {
+  font-size: 1.125rem;
+  line-height: 21px;
+  margin: 0;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 50px;
+  box-sizing: border-box;
 }
 
 header {
@@ -62,7 +88,6 @@ header nav {
 
 nav a {
   display: block;
-  font-size: 1rem;
   font-weight: 400;
   margin-left: 69px;
   padding-top: 16px;
@@ -71,17 +96,31 @@ nav a {
 nav a:hover,
 a:active {
   color: #0065fc;
-  border-top: 1px #0065fc solid;
+  border-top: 1px solid #0065fc;
 }
 
-.main-container {
+/****** Rents And Populars ***********/
+.rents-and-populars {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+/* Inclu le slogan, la barre de recherche, les filtres et le nombre de resultat de recherche disponible || Include the catchword, the search bar, the filters and the number of results avaible */
+
+/****** Search Input *******************/
+.search-part-title p {
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.search-part-form {
+  display: flex;
+  flex-direction: row;
+  height: 49px;
   width: 100%;
-  max-width: 1440px;
-  padding: 0 50px;
-  box-sizing: border-box;
+  margin-top: 35px;
 }
-
-/****** Moteur de recherche *******************/
+/* la barre de recherche || the search bar */
 
 .search-grey-part {
   display: flex;
@@ -92,19 +131,27 @@ a:active {
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
 }
+/* La partie gauche de la barre de recherche || The left part of the search bar */
 
-.hebergements-and-populaires input {
+.rents-and-populars input {
   border-left: none;
   border-right: none;
   width: 195px;
-  border-top: 1px #f2f2f2 solid;
-  border-bottom: 1px #f2f2f2 solid;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
   font-size: 1.125rem;
   font-weight: 700;
-  padding-left: 30px;
+  padding-left: 24px;
 }
 
-.button-hebergements-search {
+.rents-search-button {
+  position: relative;
+}
+/* "position: relative" pour pouvoir utiliser "display: none" pour le bouton de recherche (voir plus bas) || "position: relative" to allow the use of "display: none" for the button (see bellow) */
+
+.rents-search-button-1 {
+  position: absolute;
+  display: block;
   border: none;
   background-color: #0065fc;
   width: 132px;
@@ -116,37 +163,55 @@ a:active {
   border-bottom-right-radius: 15px;
 }
 
-/****** Filtres ***********/
-.filters-hebergements {
+.rents-search-button-2 {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #0065fc;
+  height: 49px;
+  width: 49px;
+  color: white;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+/* "display: none" n'affichera pas ce bouton pour les resolution d'écran ≠ @media (max-width: 768px) || "display: none" will not show this button for screen resolution ≠ @media (max-width: 768px) */
+
+/****** Search Filters ***********/
+.rents-filters {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 35px;
   font-size: 1.0625em;
-  gap: 15px;
+  gap: 10px;
 }
 
-.filters {
+.filters-choice {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 10px;
 }
+
 .filter i,
 p {
   display: block;
   font-weight: 700;
 }
+/* de inline à block pour permettre la mise en forme ci-dessous || from inline to block to allow the shaping bellow */
 
 .filter {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   white-space: nowrap;
   height: 50px;
   gap: 10px;
   padding: 0 19px;
-  border: 1px #d9d9d9 solid;
+  border: 2px solid #d9d9d9;
   border-radius: 30px;
 }
 
@@ -154,187 +219,187 @@ p {
   background-color: #deebff;
 }
 
-.nombre-hebergements {
+/****** Rents Number **************/
+.rents-number {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
   margin-top: 35px;
 }
-
-.nombre-hebergements p {
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0;
-}
+/* nombre de resulltats de recherche || search results number */
 
 .fa-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.625rem;
   height: 24px;
   width: 24px;
-  border: 2px #f2f2f2 solid;
+  border: 1px solid #d9d9d9;
   border-radius: 12px;
 }
 
-/****** Hebergements And Populaires ***********/
-.hebergements-and-populaires {
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-}
-
-.hebergements-and-populaires-title p {
-  margin-top: 8px;
-  margin-bottom: 0;
+.rents-number p {
+  display: block;
   font-weight: 400;
 }
 
-.hebergements-and-populaires form {
+/****** Results **************/
+.results {
+  margin: 35px 0;
   display: flex;
   flex-direction: row;
-  margin-top: 35px;
-  height: 49px;
+  gap: 40px;
 }
+/* ".results" pour la mise en page des sections Hébergements et Plus Populaires || ".results" for the layout of the Rents and Most Populars parts */
 
-.hebergements-and-populaires section {
+.rents,
+.populars {
   background-color: var(--main-bg-color);
   border-radius: 20px;
   padding: 30px;
   box-sizing: border-box;
 }
 
-/****** Resultats **************/
-.resultats {
-  margin-top: 35px;
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-}
-
-/****** Hebergements **********/
-.hebergements {
+/****** Rents ****************/
+.rents {
   width: 65%;
 }
+/* section Hébergements || Rents part */
 
-.hebergements-cards {
+.rents-cards {
   margin: 30px 0;
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   gap: 30px;
 }
 
-.hebergements-cards .card {
+.rent-card-link {
+  display: block;
+}
+
+.rents-cards .card {
   display: flex;
   flex-direction: column;
 }
 
-.hebergements-cards img {
+.rents-cards img {
   width: 100%;
   height: 124px;
+  object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
-.hebergements-cards .card-content {
-  padding-left: 15px;
+.rents-cards .card-content {
   display: flex;
   flex-direction: column;
+  padding: 0 15px;
   box-sizing: border-box;
 }
 
-.hebergements-cards .card-title {
-  margin: 4px 0 0;
+.rents-cards .card-title {
+  margin-top: 4px;
+  margin-bottom: 0;
 }
 
-.hebergements-cards .card-subtitle {
+.rents-cards .card-subtitle {
   margin: 8px 0;
 }
 
-.hebergements-cards .card-rating {
-  margin-bottom: 5px;
-}
-
-/****** Populaires ***********/
-.populaires {
+/****** Populars **************/
+.populars {
   width: 32%;
 }
+/* section Plus Populaires || Most Populars part */
 
-.populaires-title {
+.populars-title {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.populaires-cards .card {
+.populars-cards {
   display: flex;
+  flex-direction: column;
+}
+
+.popular-card-link {
+  display: block;
   margin-top: 30px;
 }
 
-.populaires-cards img {
+.populars-cards .card {
+  display: flex;
+  flex-direction: row;
+}
+
+.populars-cards img {
   width: 33%;
   height: 144px;
+  object-fit: cover;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
 
-.populaires-cards .card-content {
-  width: 67%;
-  padding-left: 15px;
+.populars-cards .card-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 67%;
+  padding-left: 15px;
   box-sizing: border-box;
 }
 
-.populaires-cards .card-title {
-  margin-top: 10px;
-  margin-bottom: 4px;
-}
-
-.populaires-cards .card-subtitle {
-  margin: 0;
-}
-
-.populaires-cards .card-rating {
+.populars-cards .card-title {
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
-/****** Activités ***********/
-.activites {
-  display: flex;
-  flex-direction: column;
-  margin-top: 35px;
-  padding: 30px;
+.populars-cards .card-rating {
+  margin-bottom: 10px;
 }
 
-.activites-cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 30px;
-}
-
-.activites-cards .card {
+/****** Activities **********/
+.activities {
   display: flex;
   flex-direction: column;
-  width: 22.5%;
-  padding: 0;
   margin-top: 30px;
 }
 
-.activites-cards img {
+.activities-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 30px;
+  gap: 30px;
+}
+
+.activity-card-link {
+  display: block;
+  width: 22.3%;
+}
+/* "width: 22.3%" valeur obtenue à l'aide des outils de dévellopement de Chrome pour avoir ≈ 80px de marge sur les côtés quand la résolution d'écran = @media (max-width: 1024px) || "width: 22.3%" value obtained thanks to Chrome DevTools to have ≈ 80px space on the sides when screen resolution = @media (max-width: 1024px) */
+
+.activity-card-link .card {
+  display: flex;
+  flex-direction: column;
+  max-height: 538px;
+  height: 100%;
+  padding: 0;
+}
+/* "max-height: 538px" pour que les cartes est la même hauteur quand des titre s'etendent sur deux lignes || "max-height: 528px" make the cards keep the same height when some title breaks into two lines */
+
+.activity-card-link img {
   height: 400px;
+  object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
-.activites-cards .card-title {
-  padding-left: 15px;
-  margin: 20px 0;
+.activity-card-link .card-content {
+  padding: 20px 19px;
 }
 
 /****** Cards ***************/
@@ -345,17 +410,15 @@ p {
   filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
-.card img {
-  object-fit: cover;
-}
-
 .card-title {
   font-size: 1rem;
+  line-height: 19px;
 }
 
 .card-subtitle {
   font-size: 0.875rem;
   font-weight: 400;
+  line-height: 16px;
 }
 
 .euro {
@@ -366,13 +429,12 @@ p {
   color: var(--main-color);
 }
 
-.neutralStar {
+.neutral-star {
   color: var(--main-bg-color);
 }
-/* Je n'ai pas compris ce fonctionnement. J'ai ajouté du style à la balise d'icone <i> pour obtenir des étoiles grisées */
 
 /****** Footer ******************/
-.pied-2-page {
+.related-infos {
   margin-top: 65px;
   height: 120px;
   padding: 20px;
@@ -382,20 +444,14 @@ p {
   background-color: #f2f2f2;
 }
 
-.colonne-pied {
+.related-infos-column {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.pied-2-page h3 {
-  display: block;
-}
-
-.pied-2-page a {
-  display: block;
+.related-infos a {
   margin-top: 15px;
-  font-size: 1rem;
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -403,55 +459,190 @@ p {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
-  .filters-hebergements {
+  .rents-filters {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
   }
+  /* "flex-direction: column" pour avoir le titre et les filtres sur deux lignes || "flex-direction: column" to have the title and the filters choice in two lines */
 
-  .filters-hebergements h2 {
-    display: block;
-  }
-
-  .filters {
-    width: 668px;
-  }
-
-  .resultats {
+  .results {
     flex-direction: column;
     gap: 50px;
   }
+  /* les section de resultats passent en affichage colonne || the results sections are now shown in column mode */
 
-  .hebergements {
+  .rents {
     width: 100%;
   }
 
-  .populaires {
+  .populars {
     width: 100%;
   }
 
-  .populaires-cards {
+  .populars-cards {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
+  /* les resultats Plus Populaires sont afficher sur une ligne || the Most Populars results are shown in on line */
 
-  .populaires-cards .card {
+  .popular-card-link {
     width: 30%;
-  }
-
-  .populaires-cards .card-title {
-    font-size: 0.875rem;
-  }
-
-  .populaires-cards .card-subtitle {
-    font-size: 0.8125rem;
   }
 }
 
 /* Small devices (phones, less than 768px) */
-/*
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* le header passe en affichege centré || the header is now shown centered */
+
+  header nav {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+
+  nav a {
+    width: 50%;
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+  }
+
+  nav a:hover,
+  a:active {
+    color: #0065fc;
+    border-top: 0;
+    border-bottom: 1px #0065fc solid;
+    width: 100%;
+  }
+
+  .search-part {
+    padding: 20px;
+  }
+
+  .rents-and-populars input {
+    width: 188px;
+  }
+  /* la taille de la barre de recherche diminue || the serch bar is downsized */
+
+  .rents-search-button-1 {
+    display: none;
+  }
+  /* "display: none" n'affichera pas ce bouton pour les resolution ≤ @media (max-width: 768px) || "display: none" will not show this button for screen resolution ≤ @media (max-width: 768px) */
+
+  .rents-search-button-2 {
+    display: flex;
+  }
+  /* affichage de ce boutton || this button is now shown */
+
+  .filters-choice {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 20px;
+  }
+  /* wrapping pour que les bouttons de filtres s'adaptent à la résolution d'écran || wrapping to adapt the filters buttons to the screen resolution */
+
+  .filter {
+    justify-content: center;
+    width: 25%;
+    padding: 0 26px;
+    flex: 1 1 auto;
+  }
+  /* "width: 25%" pour avoir deux lignes de filtres (avec width < 25% on obtient une ligne de trois filtres et une autre avec un seul (wrapping)) || "width: 25%" to have two lines of two filters (with width < 25% we have one line of three filters and another line with the last one (wrapping)) */
+
+  .filter p {
+    font-size: 0.875rem;
+  }
+
+  .results {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+  /* "flex-direction: column-reverse" la section Plus Populaires et affichée avant la section Hébergements || "flex-direction: column-reverse" the Most Populars section is shown before the Rents section*/
+
+  .rents-and-populars {
+    width: 100%;
+  }
+
+  .populars {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 0px;
+  }
+
+  .populars-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .popular-card-link {
+    width: 100%;
+  }
+
+  .populars-cards .card {
+    margin: 0;
+  }
+
+  .rents {
+    padding: 20px;
+    background-color: white;
+  }
+
+  .rents-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px 0;
+  }
+
+  .activities {
+    padding: 30px;
+    margin-top: 5px;
+  }
+
+  .activities-cards {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding: 0;
+    gap: 15px;
+  }
+
+  .activity-card-link {
+    width: 100%;
+  }
+
+  .activities-cards .card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .activities-cards img {
+    height: 141px;
+  }
+
+  .related-infos {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: auto;
+    padding: 30px;
+    background-color: #f2f2f2;
+  }
 }
-*/
